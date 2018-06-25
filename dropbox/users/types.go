@@ -25,8 +25,8 @@ package users
 import (
 	"encoding/json"
 
-	"github.com/drointello-iopbox/dropbox-sdk-go-unofficial/dropbox/common"
 	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/common"
 	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/team_common"
 	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/team_policies"
 	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/users_common"
