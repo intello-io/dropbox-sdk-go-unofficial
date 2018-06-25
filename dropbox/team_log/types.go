@@ -25,12 +25,12 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox"
-	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/files"
-	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/sharing"
-	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/team"
-	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/team_common"
-	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/team_policies"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/files"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/sharing"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/team"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/team_common"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/team_policies"
 )
 
 // AccessMethodLogInfo : Indicates the method in which the action was performed.
@@ -14459,7 +14459,7 @@ type SharedContentCopyDetails struct {
 	// SharedContentLink : Shared content link.
 	SharedContentLink string `json:"shared_content_link"`
 	// SharedContentOwner : The shared content owner.
-	SharedContentOwner IsUserLogInfo `json:"shared_content_owner,omitempty"`
+	SharedContentOwner UserLogInfo `json:"shared_content_owner,omitempty"`
 	// SharedContentAccessLevel : Shared content access level.
 	SharedContentAccessLevel *sharing.AccessLevel `json:"shared_content_access_level"`
 	// DestinationPath : The path where the member saved the content.
@@ -14493,7 +14493,7 @@ type SharedContentDownloadDetails struct {
 	// SharedContentLink : Shared content link.
 	SharedContentLink string `json:"shared_content_link"`
 	// SharedContentOwner : The shared content owner.
-	SharedContentOwner IsUserLogInfo `json:"shared_content_owner,omitempty"`
+	SharedContentOwner UserLogInfo `json:"shared_content_owner,omitempty"`
 	// SharedContentAccessLevel : Shared content access level.
 	SharedContentAccessLevel *sharing.AccessLevel `json:"shared_content_access_level"`
 }
@@ -14700,7 +14700,7 @@ type SharedContentViewDetails struct {
 	// SharedContentLink : Shared content link.
 	SharedContentLink string `json:"shared_content_link"`
 	// SharedContentOwner : The shared content owner.
-	SharedContentOwner IsUserLogInfo `json:"shared_content_owner,omitempty"`
+	SharedContentOwner UserLogInfo `json:"shared_content_owner,omitempty"`
 	// SharedContentAccessLevel : Shared content access level.
 	SharedContentAccessLevel *sharing.AccessLevel `json:"shared_content_access_level"`
 }
@@ -15115,7 +15115,7 @@ func NewSharedLinkChangeVisibilityType(Description string) *SharedLinkChangeVisi
 type SharedLinkCopyDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkCopyDetails returns a new SharedLinkCopyDetails instance
@@ -15167,7 +15167,7 @@ func NewSharedLinkCreateType(Description string) *SharedLinkCreateType {
 type SharedLinkDisableDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkDisableDetails returns a new SharedLinkDisableDetails instance
@@ -15193,7 +15193,7 @@ func NewSharedLinkDisableType(Description string) *SharedLinkDisableType {
 type SharedLinkDownloadDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkDownloadDetails returns a new SharedLinkDownloadDetails instance
@@ -15245,7 +15245,7 @@ func NewSharedLinkRemoveExpiryType(Description string) *SharedLinkRemoveExpiryTy
 type SharedLinkShareDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 	// ExternalUsers : Users without a Dropbox account that were added as shared
 	// link audience.
 	ExternalUsers []*ExternalUserLogInfo `json:"external_users,omitempty"`
@@ -15274,7 +15274,7 @@ func NewSharedLinkShareType(Description string) *SharedLinkShareType {
 type SharedLinkViewDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkViewDetails returns a new SharedLinkViewDetails instance
