@@ -1478,6 +1478,24 @@ func NewDeviceChangeIpMobileDetails() *DeviceChangeIpMobileDetails {
 	return s
 }
 
+// UnmarshalJSON deserializes into a DeviceChangeIpMobileDetails instance
+func (u *DeviceChangeIpMobileDetails) UnmarshalJSON(b []byte) error {
+	type wrap struct {
+		// DeviceSessionInfo : Device's session logged information.
+		DeviceSessionInfo json.RawMessage `json:"device_session_info"`
+	}
+	var w wrap
+	if err := json.Unmarshal(b, &w); err != nil {
+		return err
+	}
+	DeviceSessionInfo, err := IsDeviceSessionLogInfoFromJSON(w.DeviceSessionInfo)
+	if err != nil {
+		return err
+	}
+	u.DeviceSessionInfo = DeviceSessionInfo
+	return nil
+}
+
 // DeviceChangeIpMobileType : has no documentation (yet)
 type DeviceChangeIpMobileType struct {
 	// Description : has no documentation (yet)
@@ -1619,6 +1637,24 @@ type DeviceLinkSuccessDetails struct {
 func NewDeviceLinkSuccessDetails() *DeviceLinkSuccessDetails {
 	s := new(DeviceLinkSuccessDetails)
 	return s
+}
+
+// UnmarshalJSON deserializes into a DeviceLinkSuccessDetails instance
+func (u *DeviceLinkSuccessDetails) UnmarshalJSON(b []byte) error {
+	type wrap struct {
+		// DeviceSessionInfo : Device's session logged information
+		DeviceSessionInfo json.RawMessage `json:"device_session_info"`
+	}
+	var w wrap
+	if err := json.Unmarshal(b, &w); err != nil {
+		return err
+	}
+	DeviceSessionInfo, err := IsDeviceSessionLogInfoFromJSON(w.DeviceSessionInfo)
+	if err != nil {
+		return err
+	}
+	u.DeviceSessionInfo = DeviceSessionInfo
+	return nil
 }
 
 // DeviceLinkSuccessType : has no documentation (yet)
