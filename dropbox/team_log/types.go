@@ -1541,7 +1541,7 @@ func NewDeviceChangeIpWebType(Description string) *DeviceChangeIpWebType {
 type DeviceDeleteOnUnlinkFailDetails struct {
 	// SessionInfo : Session unique id. Might be missing due to historical data
 	// gap.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
@@ -1573,7 +1573,7 @@ func NewDeviceDeleteOnUnlinkFailType(Description string) *DeviceDeleteOnUnlinkFa
 type DeviceDeleteOnUnlinkSuccessDetails struct {
 	// SessionInfo : Session unique id. Might be missing due to historical data
 	// gap.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
@@ -1731,7 +1731,7 @@ const (
 // DeviceUnlinkDetails : Disconnected device.
 type DeviceUnlinkDetails struct {
 	// SessionInfo : Session unique id.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
@@ -11011,7 +11011,7 @@ type LegacyDeviceSessionLogInfo struct {
 	DeviceSessionLogInfo
 	// SessionInfo : Session unique id. Might be missing due to historical data
 	// gap.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
