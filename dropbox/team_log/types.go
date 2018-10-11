@@ -2501,6 +2501,8 @@ type EventDetails struct {
 	MemberChangeNameDetails *MemberChangeNameDetails `json:"member_change_name_details,omitempty"`
 	// MemberChangeStatusDetails : has no documentation (yet)
 	MemberChangeStatusDetails *MemberChangeStatusDetails `json:"member_change_status_details,omitempty"`
+	// MemberDeleteManualContactsDetails : has no documentation (yet)
+	MemberDeleteManualContactsDetails *MemberDeleteManualContactsDetails `json:"member_delete_manual_contacts_details,omitempty"`
 	// MemberPermanentlyDeleteAccountContentsDetails : has no documentation
 	// (yet)
 	MemberPermanentlyDeleteAccountContentsDetails *MemberPermanentlyDeleteAccountContentsDetails `json:"member_permanently_delete_account_contents_details,omitempty"`
@@ -2558,6 +2560,8 @@ type EventDetails struct {
 	PaperDocFollowedDetails *PaperDocFollowedDetails `json:"paper_doc_followed_details,omitempty"`
 	// PaperDocMentionDetails : has no documentation (yet)
 	PaperDocMentionDetails *PaperDocMentionDetails `json:"paper_doc_mention_details,omitempty"`
+	// PaperDocOwnershipChangedDetails : has no documentation (yet)
+	PaperDocOwnershipChangedDetails *PaperDocOwnershipChangedDetails `json:"paper_doc_ownership_changed_details,omitempty"`
 	// PaperDocRequestAccessDetails : has no documentation (yet)
 	PaperDocRequestAccessDetails *PaperDocRequestAccessDetails `json:"paper_doc_request_access_details,omitempty"`
 	// PaperDocResolveCommentDetails : has no documentation (yet)
@@ -2911,10 +2915,14 @@ type EventDetails struct {
 	SmartSyncOptOutDetails *SmartSyncOptOutDetails `json:"smart_sync_opt_out_details,omitempty"`
 	// SsoChangePolicyDetails : has no documentation (yet)
 	SsoChangePolicyDetails *SsoChangePolicyDetails `json:"sso_change_policy_details,omitempty"`
+	// TeamSelectiveSyncPolicyChangedDetails : has no documentation (yet)
+	TeamSelectiveSyncPolicyChangedDetails *TeamSelectiveSyncPolicyChangedDetails `json:"team_selective_sync_policy_changed_details,omitempty"`
 	// TfaChangePolicyDetails : has no documentation (yet)
 	TfaChangePolicyDetails *TfaChangePolicyDetails `json:"tfa_change_policy_details,omitempty"`
 	// TwoAccountChangePolicyDetails : has no documentation (yet)
 	TwoAccountChangePolicyDetails *TwoAccountChangePolicyDetails `json:"two_account_change_policy_details,omitempty"`
+	// ViewerInfoPolicyChangedDetails : has no documentation (yet)
+	ViewerInfoPolicyChangedDetails *ViewerInfoPolicyChangedDetails `json:"viewer_info_policy_changed_details,omitempty"`
 	// WebSessionsChangeFixedLengthPolicyDetails : has no documentation (yet)
 	WebSessionsChangeFixedLengthPolicyDetails *WebSessionsChangeFixedLengthPolicyDetails `json:"web_sessions_change_fixed_length_policy_details,omitempty"`
 	// WebSessionsChangeIdleLengthPolicyDetails : has no documentation (yet)
@@ -3038,6 +3046,7 @@ const (
 	EventDetailsMemberChangeMembershipTypeDetails                 = "member_change_membership_type_details"
 	EventDetailsMemberChangeNameDetails                           = "member_change_name_details"
 	EventDetailsMemberChangeStatusDetails                         = "member_change_status_details"
+	EventDetailsMemberDeleteManualContactsDetails                 = "member_delete_manual_contacts_details"
 	EventDetailsMemberPermanentlyDeleteAccountContentsDetails     = "member_permanently_delete_account_contents_details"
 	EventDetailsMemberSpaceLimitsAddCustomQuotaDetails            = "member_space_limits_add_custom_quota_details"
 	EventDetailsMemberSpaceLimitsChangeCustomQuotaDetails         = "member_space_limits_change_custom_quota_details"
@@ -3066,6 +3075,7 @@ const (
 	EventDetailsPaperDocEditCommentDetails                        = "paper_doc_edit_comment_details"
 	EventDetailsPaperDocFollowedDetails                           = "paper_doc_followed_details"
 	EventDetailsPaperDocMentionDetails                            = "paper_doc_mention_details"
+	EventDetailsPaperDocOwnershipChangedDetails                   = "paper_doc_ownership_changed_details"
 	EventDetailsPaperDocRequestAccessDetails                      = "paper_doc_request_access_details"
 	EventDetailsPaperDocResolveCommentDetails                     = "paper_doc_resolve_comment_details"
 	EventDetailsPaperDocRevertDetails                             = "paper_doc_revert_details"
@@ -3241,8 +3251,10 @@ const (
 	EventDetailsSmartSyncNotOptOutDetails                         = "smart_sync_not_opt_out_details"
 	EventDetailsSmartSyncOptOutDetails                            = "smart_sync_opt_out_details"
 	EventDetailsSsoChangePolicyDetails                            = "sso_change_policy_details"
+	EventDetailsTeamSelectiveSyncPolicyChangedDetails             = "team_selective_sync_policy_changed_details"
 	EventDetailsTfaChangePolicyDetails                            = "tfa_change_policy_details"
 	EventDetailsTwoAccountChangePolicyDetails                     = "two_account_change_policy_details"
+	EventDetailsViewerInfoPolicyChangedDetails                    = "viewer_info_policy_changed_details"
 	EventDetailsWebSessionsChangeFixedLengthPolicyDetails         = "web_sessions_change_fixed_length_policy_details"
 	EventDetailsWebSessionsChangeIdleLengthPolicyDetails          = "web_sessions_change_idle_length_policy_details"
 	EventDetailsTeamMergeFromDetails                              = "team_merge_from_details"
@@ -3441,6 +3453,8 @@ func (u *EventDetails) UnmarshalJSON(body []byte) error {
 		MemberChangeNameDetails json.RawMessage `json:"member_change_name_details,omitempty"`
 		// MemberChangeStatusDetails : has no documentation (yet)
 		MemberChangeStatusDetails json.RawMessage `json:"member_change_status_details,omitempty"`
+		// MemberDeleteManualContactsDetails : has no documentation (yet)
+		MemberDeleteManualContactsDetails json.RawMessage `json:"member_delete_manual_contacts_details,omitempty"`
 		// MemberPermanentlyDeleteAccountContentsDetails : has no documentation
 		// (yet)
 		MemberPermanentlyDeleteAccountContentsDetails json.RawMessage `json:"member_permanently_delete_account_contents_details,omitempty"`
@@ -3500,6 +3514,8 @@ func (u *EventDetails) UnmarshalJSON(body []byte) error {
 		PaperDocFollowedDetails json.RawMessage `json:"paper_doc_followed_details,omitempty"`
 		// PaperDocMentionDetails : has no documentation (yet)
 		PaperDocMentionDetails json.RawMessage `json:"paper_doc_mention_details,omitempty"`
+		// PaperDocOwnershipChangedDetails : has no documentation (yet)
+		PaperDocOwnershipChangedDetails json.RawMessage `json:"paper_doc_ownership_changed_details,omitempty"`
 		// PaperDocRequestAccessDetails : has no documentation (yet)
 		PaperDocRequestAccessDetails json.RawMessage `json:"paper_doc_request_access_details,omitempty"`
 		// PaperDocResolveCommentDetails : has no documentation (yet)
@@ -3865,10 +3881,14 @@ func (u *EventDetails) UnmarshalJSON(body []byte) error {
 		SmartSyncOptOutDetails json.RawMessage `json:"smart_sync_opt_out_details,omitempty"`
 		// SsoChangePolicyDetails : has no documentation (yet)
 		SsoChangePolicyDetails json.RawMessage `json:"sso_change_policy_details,omitempty"`
+		// TeamSelectiveSyncPolicyChangedDetails : has no documentation (yet)
+		TeamSelectiveSyncPolicyChangedDetails json.RawMessage `json:"team_selective_sync_policy_changed_details,omitempty"`
 		// TfaChangePolicyDetails : has no documentation (yet)
 		TfaChangePolicyDetails json.RawMessage `json:"tfa_change_policy_details,omitempty"`
 		// TwoAccountChangePolicyDetails : has no documentation (yet)
 		TwoAccountChangePolicyDetails json.RawMessage `json:"two_account_change_policy_details,omitempty"`
+		// ViewerInfoPolicyChangedDetails : has no documentation (yet)
+		ViewerInfoPolicyChangedDetails json.RawMessage `json:"viewer_info_policy_changed_details,omitempty"`
 		// WebSessionsChangeFixedLengthPolicyDetails : has no documentation
 		// (yet)
 		WebSessionsChangeFixedLengthPolicyDetails json.RawMessage `json:"web_sessions_change_fixed_length_policy_details,omitempty"`
@@ -4417,6 +4437,12 @@ func (u *EventDetails) UnmarshalJSON(body []byte) error {
 		if err != nil {
 			return err
 		}
+	case "member_delete_manual_contacts_details":
+		err = json.Unmarshal(body, &u.MemberDeleteManualContactsDetails)
+
+		if err != nil {
+			return err
+		}
 	case "member_permanently_delete_account_contents_details":
 		err = json.Unmarshal(body, &u.MemberPermanentlyDeleteAccountContentsDetails)
 
@@ -4581,6 +4607,12 @@ func (u *EventDetails) UnmarshalJSON(body []byte) error {
 		}
 	case "paper_doc_mention_details":
 		err = json.Unmarshal(body, &u.PaperDocMentionDetails)
+
+		if err != nil {
+			return err
+		}
+	case "paper_doc_ownership_changed_details":
+		err = json.Unmarshal(body, &u.PaperDocOwnershipChangedDetails)
 
 		if err != nil {
 			return err
@@ -5635,6 +5667,12 @@ func (u *EventDetails) UnmarshalJSON(body []byte) error {
 		if err != nil {
 			return err
 		}
+	case "team_selective_sync_policy_changed_details":
+		err = json.Unmarshal(body, &u.TeamSelectiveSyncPolicyChangedDetails)
+
+		if err != nil {
+			return err
+		}
 	case "tfa_change_policy_details":
 		err = json.Unmarshal(body, &u.TfaChangePolicyDetails)
 
@@ -5643,6 +5681,12 @@ func (u *EventDetails) UnmarshalJSON(body []byte) error {
 		}
 	case "two_account_change_policy_details":
 		err = json.Unmarshal(body, &u.TwoAccountChangePolicyDetails)
+
+		if err != nil {
+			return err
+		}
+	case "viewer_info_policy_changed_details":
+		err = json.Unmarshal(body, &u.ViewerInfoPolicyChangedDetails)
 
 		if err != nil {
 			return err
@@ -5958,6 +6002,8 @@ type EventType struct {
 	// MemberChangeStatus : (members) Changed member status (invited, joined,
 	// suspended, etc.)
 	MemberChangeStatus *MemberChangeStatusType `json:"member_change_status,omitempty"`
+	// MemberDeleteManualContacts : (members) Cleared saved contacts
+	MemberDeleteManualContacts *MemberDeleteManualContactsType `json:"member_delete_manual_contacts,omitempty"`
 	// MemberPermanentlyDeleteAccountContents : (members) Permanently deleted
 	// contents of deleted team member account
 	MemberPermanentlyDeleteAccountContents *MemberPermanentlyDeleteAccountContentsType `json:"member_permanently_delete_account_contents,omitempty"`
@@ -6025,6 +6071,8 @@ type EventType struct {
 	PaperDocFollowed *PaperDocFollowedType `json:"paper_doc_followed,omitempty"`
 	// PaperDocMention : (paper) Mentioned team member in Paper doc
 	PaperDocMention *PaperDocMentionType `json:"paper_doc_mention,omitempty"`
+	// PaperDocOwnershipChanged : (paper) Transferred ownership of Paper doc
+	PaperDocOwnershipChanged *PaperDocOwnershipChangedType `json:"paper_doc_ownership_changed,omitempty"`
 	// PaperDocRequestAccess : (paper) Requested access to Paper doc
 	PaperDocRequestAccess *PaperDocRequestAccessType `json:"paper_doc_request_access,omitempty"`
 	// PaperDocResolveComment : (paper) Resolved Paper doc comment
@@ -6477,6 +6525,9 @@ type EventType struct {
 	SmartSyncOptOut *SmartSyncOptOutType `json:"smart_sync_opt_out,omitempty"`
 	// SsoChangePolicy : (team_policies) Changed single sign-on setting for team
 	SsoChangePolicy *SsoChangePolicyType `json:"sso_change_policy,omitempty"`
+	// TeamSelectiveSyncPolicyChanged : (team_policies) Enabled/disabled Team
+	// Selective Sync for team
+	TeamSelectiveSyncPolicyChanged *TeamSelectiveSyncPolicyChangedType `json:"team_selective_sync_policy_changed,omitempty"`
 	// TfaChangePolicy : (team_policies) Changed two-step verification setting
 	// for team
 	TfaChangePolicy *TfaChangePolicyType `json:"tfa_change_policy,omitempty"`
@@ -6484,6 +6535,9 @@ type EventType struct {
 	// members to link personal Dropbox account and team account to same
 	// computer
 	TwoAccountChangePolicy *TwoAccountChangePolicyType `json:"two_account_change_policy,omitempty"`
+	// ViewerInfoPolicyChanged : (team_policies) Changed team policy for viewer
+	// info
+	ViewerInfoPolicyChanged *ViewerInfoPolicyChangedType `json:"viewer_info_policy_changed,omitempty"`
 	// WebSessionsChangeFixedLengthPolicy : (team_policies) Changed how long
 	// members can stay signed in to Dropbox.com
 	WebSessionsChangeFixedLengthPolicy *WebSessionsChangeFixedLengthPolicyType `json:"web_sessions_change_fixed_length_policy,omitempty"`
@@ -6614,6 +6668,7 @@ const (
 	EventTypeMemberChangeMembershipType                 = "member_change_membership_type"
 	EventTypeMemberChangeName                           = "member_change_name"
 	EventTypeMemberChangeStatus                         = "member_change_status"
+	EventTypeMemberDeleteManualContacts                 = "member_delete_manual_contacts"
 	EventTypeMemberPermanentlyDeleteAccountContents     = "member_permanently_delete_account_contents"
 	EventTypeMemberSpaceLimitsAddCustomQuota            = "member_space_limits_add_custom_quota"
 	EventTypeMemberSpaceLimitsChangeCustomQuota         = "member_space_limits_change_custom_quota"
@@ -6642,6 +6697,7 @@ const (
 	EventTypePaperDocEditComment                        = "paper_doc_edit_comment"
 	EventTypePaperDocFollowed                           = "paper_doc_followed"
 	EventTypePaperDocMention                            = "paper_doc_mention"
+	EventTypePaperDocOwnershipChanged                   = "paper_doc_ownership_changed"
 	EventTypePaperDocRequestAccess                      = "paper_doc_request_access"
 	EventTypePaperDocResolveComment                     = "paper_doc_resolve_comment"
 	EventTypePaperDocRevert                             = "paper_doc_revert"
@@ -6817,8 +6873,10 @@ const (
 	EventTypeSmartSyncNotOptOut                         = "smart_sync_not_opt_out"
 	EventTypeSmartSyncOptOut                            = "smart_sync_opt_out"
 	EventTypeSsoChangePolicy                            = "sso_change_policy"
+	EventTypeTeamSelectiveSyncPolicyChanged             = "team_selective_sync_policy_changed"
 	EventTypeTfaChangePolicy                            = "tfa_change_policy"
 	EventTypeTwoAccountChangePolicy                     = "two_account_change_policy"
+	EventTypeViewerInfoPolicyChanged                    = "viewer_info_policy_changed"
 	EventTypeWebSessionsChangeFixedLengthPolicy         = "web_sessions_change_fixed_length_policy"
 	EventTypeWebSessionsChangeIdleLengthPolicy          = "web_sessions_change_idle_length_policy"
 	EventTypeTeamMergeFrom                              = "team_merge_from"
@@ -7047,6 +7105,8 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		// MemberChangeStatus : (members) Changed member status (invited,
 		// joined, suspended, etc.)
 		MemberChangeStatus json.RawMessage `json:"member_change_status,omitempty"`
+		// MemberDeleteManualContacts : (members) Cleared saved contacts
+		MemberDeleteManualContacts json.RawMessage `json:"member_delete_manual_contacts,omitempty"`
 		// MemberPermanentlyDeleteAccountContents : (members) Permanently
 		// deleted contents of deleted team member account
 		MemberPermanentlyDeleteAccountContents json.RawMessage `json:"member_permanently_delete_account_contents,omitempty"`
@@ -7116,6 +7176,8 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		PaperDocFollowed json.RawMessage `json:"paper_doc_followed,omitempty"`
 		// PaperDocMention : (paper) Mentioned team member in Paper doc
 		PaperDocMention json.RawMessage `json:"paper_doc_mention,omitempty"`
+		// PaperDocOwnershipChanged : (paper) Transferred ownership of Paper doc
+		PaperDocOwnershipChanged json.RawMessage `json:"paper_doc_ownership_changed,omitempty"`
 		// PaperDocRequestAccess : (paper) Requested access to Paper doc
 		PaperDocRequestAccess json.RawMessage `json:"paper_doc_request_access,omitempty"`
 		// PaperDocResolveComment : (paper) Resolved Paper doc comment
@@ -7584,6 +7646,9 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		// SsoChangePolicy : (team_policies) Changed single sign-on setting for
 		// team
 		SsoChangePolicy json.RawMessage `json:"sso_change_policy,omitempty"`
+		// TeamSelectiveSyncPolicyChanged : (team_policies) Enabled/disabled
+		// Team Selective Sync for team
+		TeamSelectiveSyncPolicyChanged json.RawMessage `json:"team_selective_sync_policy_changed,omitempty"`
 		// TfaChangePolicy : (team_policies) Changed two-step verification
 		// setting for team
 		TfaChangePolicy json.RawMessage `json:"tfa_change_policy,omitempty"`
@@ -7591,6 +7656,9 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		// members to link personal Dropbox account and team account to same
 		// computer
 		TwoAccountChangePolicy json.RawMessage `json:"two_account_change_policy,omitempty"`
+		// ViewerInfoPolicyChanged : (team_policies) Changed team policy for
+		// viewer info
+		ViewerInfoPolicyChanged json.RawMessage `json:"viewer_info_policy_changed,omitempty"`
 		// WebSessionsChangeFixedLengthPolicy : (team_policies) Changed how long
 		// members can stay signed in to Dropbox.com
 		WebSessionsChangeFixedLengthPolicy json.RawMessage `json:"web_sessions_change_fixed_length_policy,omitempty"`
@@ -8147,6 +8215,12 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		if err != nil {
 			return err
 		}
+	case "member_delete_manual_contacts":
+		err = json.Unmarshal(body, &u.MemberDeleteManualContacts)
+
+		if err != nil {
+			return err
+		}
 	case "member_permanently_delete_account_contents":
 		err = json.Unmarshal(body, &u.MemberPermanentlyDeleteAccountContents)
 
@@ -8311,6 +8385,12 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		}
 	case "paper_doc_mention":
 		err = json.Unmarshal(body, &u.PaperDocMention)
+
+		if err != nil {
+			return err
+		}
+	case "paper_doc_ownership_changed":
+		err = json.Unmarshal(body, &u.PaperDocOwnershipChanged)
 
 		if err != nil {
 			return err
@@ -9365,6 +9445,12 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		if err != nil {
 			return err
 		}
+	case "team_selective_sync_policy_changed":
+		err = json.Unmarshal(body, &u.TeamSelectiveSyncPolicyChanged)
+
+		if err != nil {
+			return err
+		}
 	case "tfa_change_policy":
 		err = json.Unmarshal(body, &u.TfaChangePolicy)
 
@@ -9373,6 +9459,12 @@ func (u *EventType) UnmarshalJSON(body []byte) error {
 		}
 	case "two_account_change_policy":
 		err = json.Unmarshal(body, &u.TwoAccountChangePolicy)
+
+		if err != nil {
+			return err
+		}
+	case "viewer_info_policy_changed":
+		err = json.Unmarshal(body, &u.ViewerInfoPolicyChanged)
 
 		if err != nil {
 			return err
@@ -10453,7 +10545,10 @@ func NewGeoLocationLogInfo(IpAddress string) *GeoLocationLogInfo {
 
 // GetTeamEventsArg : has no documentation (yet)
 type GetTeamEventsArg struct {
-	// Limit : Number of results to return per call.
+	// Limit : The maximal number of results to return per call. Note that some
+	// calls may not return `limit` number of events, and may even return no
+	// events, even with `has_more` set to true. In this case, callers should
+	// fetch again using `getEventsContinue`.
 	Limit uint32 `json:"limit"`
 	// AccountId : Filter the events by account ID. Return ony events with this
 	// account_id as either Actor, Context, or Participants.
@@ -10488,13 +10583,43 @@ func NewGetTeamEventsContinueArg(Cursor string) *GetTeamEventsContinueArg {
 // `getEventsContinue`.
 type GetTeamEventsContinueError struct {
 	dropbox.Tagged
+	// Reset : Cursors are intended to be used quickly. Individual cursor values
+	// are normally valid for days, but in rare cases may be reset sooner.
+	// Cursor reset errors should be handled by fetching a new cursor from
+	// `getEvents`. The associated value is the approximate timestamp of the
+	// most recent event returned by the cursor. This should be used as a
+	// resumption point when calling `getEvents` to obtain a new cursor.
+	Reset time.Time `json:"reset,omitempty"`
 }
 
 // Valid tag values for GetTeamEventsContinueError
 const (
 	GetTeamEventsContinueErrorBadCursor = "bad_cursor"
+	GetTeamEventsContinueErrorReset     = "reset"
 	GetTeamEventsContinueErrorOther     = "other"
 )
+
+// UnmarshalJSON deserializes into a GetTeamEventsContinueError instance
+func (u *GetTeamEventsContinueError) UnmarshalJSON(body []byte) error {
+	type wrap struct {
+		dropbox.Tagged
+	}
+	var w wrap
+	var err error
+	if err = json.Unmarshal(body, &w); err != nil {
+		return err
+	}
+	u.Tag = w.Tag
+	switch u.Tag {
+	case "reset":
+		err = json.Unmarshal(body, &u.Reset)
+
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
 
 // GetTeamEventsError : Errors that can be raised when calling `getEvents`.
 type GetTeamEventsError struct {
@@ -10510,14 +10635,20 @@ const (
 
 // GetTeamEventsResult : has no documentation (yet)
 type GetTeamEventsResult struct {
-	// Events : List of events.
+	// Events : List of events. Note that events are not guaranteed to be sorted
+	// by their timestamp value.
 	Events []*TeamEvent `json:"events"`
 	// Cursor : Pass the cursor into `getEventsContinue` to obtain additional
-	// events.
+	// events. The value of `cursor` may change for each response from
+	// `getEventsContinue`, regardless of the value of `has_more`; older cursor
+	// strings may expire. Thus, callers should ensure that they update their
+	// cursor based on the latest value of `cursor` after each call, and poll
+	// regularly if they wish to poll for new events. Callers should handle
+	// reset exceptions for expired cursors.
 	Cursor string `json:"cursor"`
-	// HasMore : Is true if there are additional events that have not been
+	// HasMore : Is true if there may be additional events that have not been
 	// returned yet. An additional call to `getEventsContinue` can retrieve
-	// them.
+	// them. Note that `has_more` may be true, even if `events` is empty.
 	HasMore bool `json:"has_more"`
 }
 
@@ -11384,6 +11515,29 @@ type MemberChangeStatusType struct {
 // NewMemberChangeStatusType returns a new MemberChangeStatusType instance
 func NewMemberChangeStatusType(Description string) *MemberChangeStatusType {
 	s := new(MemberChangeStatusType)
+	s.Description = Description
+	return s
+}
+
+// MemberDeleteManualContactsDetails : Cleared saved contacts.
+type MemberDeleteManualContactsDetails struct {
+}
+
+// NewMemberDeleteManualContactsDetails returns a new MemberDeleteManualContactsDetails instance
+func NewMemberDeleteManualContactsDetails() *MemberDeleteManualContactsDetails {
+	s := new(MemberDeleteManualContactsDetails)
+	return s
+}
+
+// MemberDeleteManualContactsType : has no documentation (yet)
+type MemberDeleteManualContactsType struct {
+	// Description : has no documentation (yet)
+	Description string `json:"description"`
+}
+
+// NewMemberDeleteManualContactsType returns a new MemberDeleteManualContactsType instance
+func NewMemberDeleteManualContactsType(Description string) *MemberDeleteManualContactsType {
+	s := new(MemberDeleteManualContactsType)
 	s.Description = Description
 	return s
 }
@@ -12904,6 +13058,37 @@ func NewPaperDocMentionType(Description string) *PaperDocMentionType {
 	return s
 }
 
+// PaperDocOwnershipChangedDetails : Transferred ownership of Paper doc.
+type PaperDocOwnershipChangedDetails struct {
+	// EventUuid : Event unique identifier.
+	EventUuid string `json:"event_uuid"`
+	// OldOwnerUserId : Previous owner.
+	OldOwnerUserId string `json:"old_owner_user_id,omitempty"`
+	// NewOwnerUserId : New owner.
+	NewOwnerUserId string `json:"new_owner_user_id"`
+}
+
+// NewPaperDocOwnershipChangedDetails returns a new PaperDocOwnershipChangedDetails instance
+func NewPaperDocOwnershipChangedDetails(EventUuid string, NewOwnerUserId string) *PaperDocOwnershipChangedDetails {
+	s := new(PaperDocOwnershipChangedDetails)
+	s.EventUuid = EventUuid
+	s.NewOwnerUserId = NewOwnerUserId
+	return s
+}
+
+// PaperDocOwnershipChangedType : has no documentation (yet)
+type PaperDocOwnershipChangedType struct {
+	// Description : has no documentation (yet)
+	Description string `json:"description"`
+}
+
+// NewPaperDocOwnershipChangedType returns a new PaperDocOwnershipChangedType instance
+func NewPaperDocOwnershipChangedType(Description string) *PaperDocOwnershipChangedType {
+	s := new(PaperDocOwnershipChangedType)
+	s.Description = Description
+	return s
+}
+
 // PaperDocRequestAccessDetails : Requested access to Paper doc.
 type PaperDocRequestAccessDetails struct {
 	// EventUuid : Event unique identifier.
@@ -13488,6 +13673,19 @@ func (u *ParticipantLogInfo) UnmarshalJSON(body []byte) error {
 	return nil
 }
 
+// PassPolicy : has no documentation (yet)
+type PassPolicy struct {
+	dropbox.Tagged
+}
+
+// Valid tag values for PassPolicy
+const (
+	PassPolicyEnabled  = "enabled"
+	PassPolicyAllow    = "allow"
+	PassPolicyDisabled = "disabled"
+	PassPolicyOther    = "other"
+)
+
 // PasswordChangeDetails : Changed password.
 type PasswordChangeDetails struct {
 }
@@ -13614,6 +13812,17 @@ const (
 	PlacementRestrictionEuropeOnly = "europe_only"
 	PlacementRestrictionNone       = "none"
 	PlacementRestrictionOther      = "other"
+)
+
+// QuickActionType : Quick action type.
+type QuickActionType struct {
+	dropbox.Tagged
+}
+
+// Valid tag values for QuickActionType
+const (
+	QuickActionTypeDeleteSharedLink = "delete_shared_link"
+	QuickActionTypeOther            = "other"
 )
 
 // RelocateAssetReferencesLogInfo : Provides the indices of the source asset and
@@ -14976,6 +15185,12 @@ type SharedFolderNestDetails struct {
 	// NewParentNsId : New parent namespace ID. Might be missing due to
 	// historical data gap.
 	NewParentNsId string `json:"new_parent_ns_id,omitempty"`
+	// PreviousNsPath : Previous namespace path. Might be missing due to
+	// historical data gap.
+	PreviousNsPath string `json:"previous_ns_path,omitempty"`
+	// NewNsPath : New namespace path. Might be missing due to historical data
+	// gap.
+	NewNsPath string `json:"new_ns_path,omitempty"`
 }
 
 // NewSharedFolderNestDetails returns a new SharedFolderNestDetails instance
@@ -15493,9 +15708,10 @@ type SharingMemberPolicy struct {
 
 // Valid tag values for SharingMemberPolicy
 const (
-	SharingMemberPolicyAllow  = "allow"
-	SharingMemberPolicyForbid = "forbid"
-	SharingMemberPolicyOther  = "other"
+	SharingMemberPolicyAllow                   = "allow"
+	SharingMemberPolicyForbid                  = "forbid"
+	SharingMemberPolicyTeamMembersAndWhitelist = "team_members_and_whitelist"
+	SharingMemberPolicyOther                   = "other"
 )
 
 // ShmodelGroupShareDetails : Shared link with group.
@@ -17263,6 +17479,49 @@ func NewTeamProfileRemoveLogoType(Description string) *TeamProfileRemoveLogoType
 	return s
 }
 
+// TeamSelectiveSyncPolicy : Policy for controlling whether team selective sync
+// is enabled for team.
+type TeamSelectiveSyncPolicy struct {
+	dropbox.Tagged
+}
+
+// Valid tag values for TeamSelectiveSyncPolicy
+const (
+	TeamSelectiveSyncPolicyDisabled = "disabled"
+	TeamSelectiveSyncPolicyEnabled  = "enabled"
+	TeamSelectiveSyncPolicyOther    = "other"
+)
+
+// TeamSelectiveSyncPolicyChangedDetails : Enabled/disabled Team Selective Sync
+// for team.
+type TeamSelectiveSyncPolicyChangedDetails struct {
+	// NewValue : New Team Selective Sync policy.
+	NewValue *TeamSelectiveSyncPolicy `json:"new_value"`
+	// PreviousValue : Previous Team Selective Sync policy.
+	PreviousValue *TeamSelectiveSyncPolicy `json:"previous_value"`
+}
+
+// NewTeamSelectiveSyncPolicyChangedDetails returns a new TeamSelectiveSyncPolicyChangedDetails instance
+func NewTeamSelectiveSyncPolicyChangedDetails(NewValue *TeamSelectiveSyncPolicy, PreviousValue *TeamSelectiveSyncPolicy) *TeamSelectiveSyncPolicyChangedDetails {
+	s := new(TeamSelectiveSyncPolicyChangedDetails)
+	s.NewValue = NewValue
+	s.PreviousValue = PreviousValue
+	return s
+}
+
+// TeamSelectiveSyncPolicyChangedType : has no documentation (yet)
+type TeamSelectiveSyncPolicyChangedType struct {
+	// Description : has no documentation (yet)
+	Description string `json:"description"`
+}
+
+// NewTeamSelectiveSyncPolicyChangedType returns a new TeamSelectiveSyncPolicyChangedType instance
+func NewTeamSelectiveSyncPolicyChangedType(Description string) *TeamSelectiveSyncPolicyChangedType {
+	s := new(TeamSelectiveSyncPolicyChangedType)
+	s.Description = Description
+	return s
+}
+
 // TeamSelectiveSyncSettingsChangedDetails : Changed sync default.
 type TeamSelectiveSyncSettingsChangedDetails struct {
 	// PreviousValue : Previous value.
@@ -17605,6 +17864,35 @@ type UserOrTeamLinkedAppLogInfo struct {
 // NewUserOrTeamLinkedAppLogInfo returns a new UserOrTeamLinkedAppLogInfo instance
 func NewUserOrTeamLinkedAppLogInfo() *UserOrTeamLinkedAppLogInfo {
 	s := new(UserOrTeamLinkedAppLogInfo)
+	return s
+}
+
+// ViewerInfoPolicyChangedDetails : Changed team policy for viewer info.
+type ViewerInfoPolicyChangedDetails struct {
+	// PreviousValue : Previous Viewer Info policy.
+	PreviousValue *PassPolicy `json:"previous_value"`
+	// NewValue : New Viewer Info policy.
+	NewValue *PassPolicy `json:"new_value"`
+}
+
+// NewViewerInfoPolicyChangedDetails returns a new ViewerInfoPolicyChangedDetails instance
+func NewViewerInfoPolicyChangedDetails(PreviousValue *PassPolicy, NewValue *PassPolicy) *ViewerInfoPolicyChangedDetails {
+	s := new(ViewerInfoPolicyChangedDetails)
+	s.PreviousValue = PreviousValue
+	s.NewValue = NewValue
+	return s
+}
+
+// ViewerInfoPolicyChangedType : has no documentation (yet)
+type ViewerInfoPolicyChangedType struct {
+	// Description : has no documentation (yet)
+	Description string `json:"description"`
+}
+
+// NewViewerInfoPolicyChangedType returns a new ViewerInfoPolicyChangedType instance
+func NewViewerInfoPolicyChangedType(Description string) *ViewerInfoPolicyChangedType {
+	s := new(ViewerInfoPolicyChangedType)
+	s.Description = Description
 	return s
 }
 
