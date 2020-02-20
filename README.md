@@ -1,4 +1,4 @@
-# Dropbox SDK for Go [UNOFFICIAL] [![GoDoc](https://godoc.org/github.com/dropbox/dropbox-sdk-go-unofficial/dropbox?status.svg)](https://godoc.org/github.com/dropbox/dropbox-sdk-go-unofficial/dropbox) [![Build Status](https://travis-ci.org/dropbox/dropbox-sdk-go-unofficial.svg?branch=master)](https://travis-ci.org/dropbox/dropbox-sdk-go-unofficial) [![Go Report Card](https://goreportcard.com/badge/github.com/dropbox/dropbox-sdk-go-unofficial)](https://goreportcard.com/report/github.com/dropbox/dropbox-sdk-go-unofficial)
+# Dropbox SDK for Go [UNOFFICIAL] [![GoDoc](https://godoc.org/github.com/intello-io/dropbox-sdk-go-unofficial/dropbox?status.svg)](https://godoc.org/github.com/intello-io/dropbox-sdk-go-unofficial/dropbox) [![Build Status](https://travis-ci.org/intello-io/dropbox-sdk-go-unofficial.svg?branch=master)](https://travis-ci.org/intello-io/dropbox-sdk-go-unofficial) [![Go Report Card](https://goreportcard.com/badge/github.com/intello-io/dropbox-sdk-go-unofficial)](https://goreportcard.com/report/github.com/intello-io/dropbox-sdk-go-unofficial)
 
 An **UNOFFICIAL** Go SDK for integrating with the Dropbox API v2. Tested with Go 1.5+
 
@@ -17,18 +17,18 @@ An **UNOFFICIAL** Go SDK for integrating with the Dropbox API v2. Tested with Go
 ## Installation
 
 ```sh
-$ go get github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/...
+$ go get github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/...
 ```
 
 For most applications, you should just import the relevant namespace(s) only. The SDK exports the following sub-packages:
 
-* `github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/auth`
-* `github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/files`
-* `github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/sharing`
-* `github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/team`
-* `github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/users`
+* `github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/auth`
+* `github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/files`
+* `github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/sharing`
+* `github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/team`
+* `github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/users`
 
-Additionally, the base `github.com/dropbox/dropbox-sdk-go-unofficial/dropbox` package exports some configuration and helper methods.
+Additionally, the base `github.com/intello-io/dropbox-sdk-go-unofficial/dropbox` package exports some configuration and helper methods.
 
 ## Usage
 
@@ -39,8 +39,8 @@ First, you need to [register a new "app"](https://dropbox.com/developers/apps) t
 Once you've created an app, you can get an access token from the app's console. Note that this token will only work for the Dropbox account the token is associated with.
 
 ```go
-import "github.com/dropbox/dropbox-sdk-go-unofficial/dropbox"
-import "github.com/dropbox/dropbox-sdk-go-unofficial/dropbox/users"
+import "github.com/intello-io/dropbox-sdk-go-unofficial/dropbox"
+import "github.com/intello-io/dropbox-sdk-go-unofficial/dropbox/users"
 
 func main() {
   config := dropbox.Config{
@@ -88,7 +88,7 @@ Please read the [API docs](https://www.dropbox.com/developers/documentation/http
 
 ## Code Generation
 
-This SDK is automatically generated using the public [Dropbox API spec](https://github.com/dropbox/dropbox-api-spec) and [Stone](https://github.com/dropbox/stone). See this [README](https://github.com/dropbox/dropbox-sdk-go-unofficial/blob/master/generator/README.md)
+This SDK is automatically generated using the public [Dropbox API spec](https://github.com/dropbox/dropbox-api-spec) and [Stone](https://github.com/dropbox/stone). See this [README](https://github.com/intello-io/dropbox-sdk-go-unofficial/blob/master/generator/README.md)
 for more details on how code is generated. 
 
 ## Caveats

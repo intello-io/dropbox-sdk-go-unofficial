@@ -25,7 +25,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox"
+	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox"
 )
 
 // GroupManagementType : The group type determines how a group is managed.
