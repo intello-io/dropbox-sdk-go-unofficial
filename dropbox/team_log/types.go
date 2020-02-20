@@ -1528,7 +1528,7 @@ func NewDeviceChangeIpWebType(Description string) *DeviceChangeIpWebType {
 type DeviceDeleteOnUnlinkFailDetails struct {
 	// SessionInfo : Session unique id. Might be missing due to historical data
 	// gap.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
@@ -1560,7 +1560,7 @@ func NewDeviceDeleteOnUnlinkFailType(Description string) *DeviceDeleteOnUnlinkFa
 type DeviceDeleteOnUnlinkSuccessDetails struct {
 	// SessionInfo : Session unique id. Might be missing due to historical data
 	// gap.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
@@ -1700,7 +1700,7 @@ const (
 // DeviceUnlinkDetails : Disconnected device.
 type DeviceUnlinkDetails struct {
 	// SessionInfo : Session unique id.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
@@ -10645,7 +10645,7 @@ type LegacyDeviceSessionLogInfo struct {
 	DeviceSessionLogInfo
 	// SessionInfo : Session unique id. Might be missing due to historical data
 	// gap.
-	SessionInfo IsSessionLogInfo `json:"session_info,omitempty"`
+	SessionInfo SessionLogInfo `json:"session_info,omitempty"`
 	// DisplayName : The device name. Might be missing due to historical data
 	// gap.
 	DisplayName string `json:"display_name,omitempty"`
@@ -14636,7 +14636,7 @@ type SharedContentCopyDetails struct {
 	// SharedContentLink : Shared content link.
 	SharedContentLink string `json:"shared_content_link"`
 	// SharedContentOwner : The shared content owner.
-	SharedContentOwner IsUserLogInfo `json:"shared_content_owner,omitempty"`
+	SharedContentOwner UserLogInfo `json:"shared_content_owner,omitempty"`
 	// SharedContentAccessLevel : Shared content access level.
 	SharedContentAccessLevel *sharing.AccessLevel `json:"shared_content_access_level"`
 	// DestinationPath : The path where the member saved the content.
@@ -14670,7 +14670,7 @@ type SharedContentDownloadDetails struct {
 	// SharedContentLink : Shared content link.
 	SharedContentLink string `json:"shared_content_link"`
 	// SharedContentOwner : The shared content owner.
-	SharedContentOwner IsUserLogInfo `json:"shared_content_owner,omitempty"`
+	SharedContentOwner UserLogInfo `json:"shared_content_owner,omitempty"`
 	// SharedContentAccessLevel : Shared content access level.
 	SharedContentAccessLevel *sharing.AccessLevel `json:"shared_content_access_level"`
 }
@@ -14877,7 +14877,7 @@ type SharedContentViewDetails struct {
 	// SharedContentLink : Shared content link.
 	SharedContentLink string `json:"shared_content_link"`
 	// SharedContentOwner : The shared content owner.
-	SharedContentOwner IsUserLogInfo `json:"shared_content_owner,omitempty"`
+	SharedContentOwner UserLogInfo `json:"shared_content_owner,omitempty"`
 	// SharedContentAccessLevel : Shared content access level.
 	SharedContentAccessLevel *sharing.AccessLevel `json:"shared_content_access_level"`
 }
@@ -15298,7 +15298,7 @@ func NewSharedLinkChangeVisibilityType(Description string) *SharedLinkChangeVisi
 type SharedLinkCopyDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkCopyDetails returns a new SharedLinkCopyDetails instance
@@ -15350,7 +15350,7 @@ func NewSharedLinkCreateType(Description string) *SharedLinkCreateType {
 type SharedLinkDisableDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkDisableDetails returns a new SharedLinkDisableDetails instance
@@ -15376,7 +15376,7 @@ func NewSharedLinkDisableType(Description string) *SharedLinkDisableType {
 type SharedLinkDownloadDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkDownloadDetails returns a new SharedLinkDownloadDetails instance
@@ -15428,7 +15428,7 @@ func NewSharedLinkRemoveExpiryType(Description string) *SharedLinkRemoveExpiryTy
 type SharedLinkShareDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 	// ExternalUsers : Users without a Dropbox account that were added as shared
 	// link audience.
 	ExternalUsers []*ExternalUserLogInfo `json:"external_users,omitempty"`
@@ -15457,7 +15457,7 @@ func NewSharedLinkShareType(Description string) *SharedLinkShareType {
 type SharedLinkViewDetails struct {
 	// SharedLinkOwner : Shared link owner details. Might be missing due to
 	// historical data gap.
-	SharedLinkOwner IsUserLogInfo `json:"shared_link_owner,omitempty"`
+	SharedLinkOwner UserLogInfo `json:"shared_link_owner,omitempty"`
 }
 
 // NewSharedLinkViewDetails returns a new SharedLinkViewDetails instance
