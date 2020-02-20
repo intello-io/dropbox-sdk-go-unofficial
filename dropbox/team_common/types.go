@@ -22,6 +22,7 @@
 package team_common
 
 import (
+	"encoding/json"
 	"time"
 
 	"github.com/dropbox/dropbox-sdk-go-unofficial/dropbox"
@@ -101,4 +102,16 @@ type TimeRange struct {
 func NewTimeRange() *TimeRange {
 	s := new(TimeRange)
 	return s
+}
+
+// MarshalJSON converts the time range into the format dropbox requires
+func (tr *TimeRange) MarshalJSON() ([]byte, error) {
+	format := "2006-01-02T15:04:05Z"
+	return json.Marshal(&struct {
+		StartTime string `json:"start_time"`
+		EndTime   string `json:"end_time"`
+	}{
+		StartTime: tr.StartTime.Format(format),
+		EndTime:   tr.EndTime.Format(format),
+	})
 }
