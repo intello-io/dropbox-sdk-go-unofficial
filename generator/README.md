@@ -1,7 +1,7 @@
 # Dropbox Go SDK Generator
 
 This directory contains the [Stone](https://github.com/dropbox/stone) code generators
-used to programmatically generate the [Dropbox Go SDK](https://github.com/dropbox/dropbox-sdk-go).
+used to programmatically generate the [Dropbox Go SDK](https://github.com/intello-io/dropbox-sdk-go).
 
 ## Requirements
 
