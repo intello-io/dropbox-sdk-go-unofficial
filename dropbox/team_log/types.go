@@ -23,6 +23,7 @@ package team_log
 
 import (
 	"encoding/json"
+	"fmt"
 	"time"
 
 	"github.com/intello-io/dropbox-sdk-go-unofficial/dropbox"
@@ -1131,7 +1132,7 @@ func (u *deviceSessionLogInfoUnion) UnmarshalJSON(body []byte) error {
 func IsDeviceSessionLogInfoFromJSON(data []byte) (IsDeviceSessionLogInfo, error) {
 	var t deviceSessionLogInfoUnion
 	if err := json.Unmarshal(data, &t); err != nil {
-		return nil, err
+		return nil, fmt.Errorf("json.Unmarshal: %v", err)
 	}
 	switch t.Tag {
 	case "desktop_device_session":
@@ -1486,11 +1487,14 @@ func (u *DeviceChangeIpMobileDetails) UnmarshalJSON(b []byte) error {
 	}
 	var w wrap
 	if err := json.Unmarshal(b, &w); err != nil {
-		return err
+		return fmt.Errorf("json.Unmarshal: %v", err)
+	}
+	if len(w.DeviceSessionInfo) < 1 {
+		return nil
 	}
 	DeviceSessionInfo, err := IsDeviceSessionLogInfoFromJSON(w.DeviceSessionInfo)
 	if err != nil {
-		return err
+		return fmt.Errorf("IsDeviceSessionLogInfoFromJSON: %v", err)
 	}
 	u.DeviceSessionInfo = DeviceSessionInfo
 	return nil
@@ -1642,16 +1646,19 @@ func NewDeviceLinkSuccessDetails() *DeviceLinkSuccessDetails {
 // UnmarshalJSON deserializes into a DeviceLinkSuccessDetails instance
 func (u *DeviceLinkSuccessDetails) UnmarshalJSON(b []byte) error {
 	type wrap struct {
-		// DeviceSessionInfo : Device's session logged information
+		// DeviceSessionInfo : Device's session logged information.
 		DeviceSessionInfo json.RawMessage `json:"device_session_info"`
 	}
 	var w wrap
 	if err := json.Unmarshal(b, &w); err != nil {
-		return err
+		return fmt.Errorf("json.Unmarshal: %v", err)
+	}
+	if len(w.DeviceSessionInfo) < 1 {
+		return nil
 	}
 	DeviceSessionInfo, err := IsDeviceSessionLogInfoFromJSON(w.DeviceSessionInfo)
 	if err != nil {
-		return err
+		return fmt.Errorf("IsDeviceSessionLogInfoFromJSON: %v", err)
 	}
 	u.DeviceSessionInfo = DeviceSessionInfo
 	return nil
